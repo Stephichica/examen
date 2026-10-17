@@ -16,9 +16,7 @@
    9. Media queries: tablet <= 900px; móvil <= 600px
 */
 
-/* ==========================================
-   1. ESTILOS DE LA CABECERA Y NAVEGACIÓN
-   ================================---------- */
+/* Aplicamos estilos al encabezado */
 .encabezado {
   background-color: white;
   color: rgb(23, 23, 56);
