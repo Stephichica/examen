@@ -1,0 +1,453 @@
+/* EXAMEN SEGUNDO PARCIAL - DESARROLLO WEB I
+   Estudiante: __________________________
+   Curso: _______________________________
+
+   INSTRUCCIONES: Implementar aquí TODO el CSS.
+   No modificar la estructura HTML ni los nombres de las clases.
+
+   1. Estilos generales, tipografía y contenedor
+   2. Header y navegación (Flexbox)
+   3. Portada principal (Flexbox)
+   4. Catálogo de 6 vehículos (CSS Grid)
+   5. Tarjetas, botones, hover y sombras
+   6. Nosotros y beneficios (Grid / Flexbox)
+   7. Formulario y estados :focus
+   8. Footer
+   9. Media queries: tablet <= 900px; móvil <= 600px
+*/
+
+/* ==========================================
+   1. ESTILOS DE LA CABECERA Y NAVEGACIÓN
+   ================================---------- */
+.encabezado {
+  background-color: white;
+  color: rgb(23, 23, 56);
+  padding: 15px 40px;
+  border-bottom: 1px solid rgb(239, 241, 248);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.encabezado-contenido {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.marca img{
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+.navegacion {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu a {
+  color: rgb(23, 23, 56);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: rgb(240, 143, 64);
+}
+
+/*Aplicamos estilos al boton*/
+.boton-principal {
+  color: rgb(23, 23, 56);
+  background-color: rgb(240, 143, 64);
+  border: 2px solid rgb(240, 143, 64);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.boton-cabecera {
+  white-space: nowrap;
+}
+
+.boton-principal:hover {
+  opacity: 0.85;
+}
+
+.boton-claro {
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.boton-claro:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/*Aplicamos estilos a hero*/
+.hero {
+  background-color: rgb(23, 23, 56);
+  color: white;
+  padding: 50px 0;
+}
+
+.hero-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-texto {
+  flex: 1;
+}
+.etiqueta {
+  color: rgb(240, 143, 64);
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 14px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.hero-texto h1 {
+  font-size: 42px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 15px 0;
+  line-height: 1.2;
+  color: rgb(221, 215, 215);
+}
+
+.hero-texto p {
+  font-size: 16px;
+  color:white;
+  margin-bottom: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-acciones {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-imagen img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
+/*Aplicamos estilos al catalogo y a la cuadricula*/
+.catalogo {
+  padding: 50px 0;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.seccion-encabezado {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+}
+
+.seccion-encabezado h2 {
+  font-size: 32px;
+  color: rgb(23, 23, 56);
+  margin: 10px 0;
+}
+
+.seccion-encabezado p {
+  color: rgb(100, 105, 120);
+  font-size: 16px;
+}
+
+/* Cuadrícula de 3 columnas para los vehículos */
+.vehiculos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.vehiculo-card {
+  background-color: white;
+  border: 1px solid rgb(221, 225, 238);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.vehiculo-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.vehiculo-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.vehiculo-anio {
+  font-size: 12px;
+  color: rgb(120, 125, 140);
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.vehiculo-info h3 {
+  font-size: 20px;
+  color: rgb(23, 23, 56);
+  margin: 0 0 10px 0;
+}
+
+.vehiculo-precio {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(240, 143, 64);
+  margin-bottom: 15px;
+}
+
+.vehiculo-detalles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.vehiculo-detalles li {
+  background-color: rgb(239, 241, 248);
+  color: rgb(23, 23, 56);
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.vehiculo-card .boton-secundario {
+  background-color: rgb(23, 23, 56);
+  color: white;
+  border: 2px solid rgb(23, 23, 56);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  text-align: center;
+  display: block;
+  margin-top: auto;
+  transition: background-color 0.2s ease;
+}
+
+.vehiculo-card .boton-secundario:hover {
+  background-color: rgb(240, 143, 64);
+  border-color: rgb(240, 143, 64);
+  color: rgb(23, 23, 56);
+}
+
+/*Diseño para celulares y tablets*/
+@media (max-width: 900px) {
+  .vehiculos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .encabezado-contenido {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .hero-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-acciones {
+    justify-content: center;
+  }
+
+  .vehiculos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Aplicamos estilos a Nosotros*/
+.nosotros-grid{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color:rgb(3, 3, 3);
+   padding: 60px;
+   margin: 0px auto;
+   background-color:rgb(239, 241, 248);
+   gap:50px;  
+   font-family: Arial, Helvetica, sans-serif;
+}
+/*Aplicamos estilo a las etiquetas*/
+.etiqueta{
+   color: rgb(240, 143, 64);
+   text-transform: uppercase;
+   font-weight:bolder;
+}
+
+/* Aplicamos estilos en el botton*/
+.boton-principal{
+   color:black;
+   border: 4px solid rgb(240, 143, 64);
+   background-color: rgb(240, 143, 64);
+   font-family: Arial;
+   font-weight:bolder;
+   text-decoration: none;
+   border-radius: 8px;
+   padding: 10px 15px;
+   display: inline-block;
+}
+
+/*Aplicamos estilo a la cuadricula*/
+.beneficios-grid{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   font-family: Arial;
+   border-radius: 8px;
+   background-color:  rgb(239, 241, 248);
+   gap: 15px;
+   padding: 20px;
+}
+/*Aplicamos estilos a cada benefio*/
+.beneficio{
+   border:1px solid white;
+   border-radius: 4px;
+   background-color: white;
+   padding: 15px;
+}
+/*Aplicamos estilos a beneficio-icono*/
+.beneficio-icono{
+   color: rgb(240, 143, 64);
+}
+
+/*Aplicamos estilos a el contenedors contacto-grid*/
+
+.contacto-grid{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 10px;
+   align-items: start;
+   padding: 50px;
+   font-family: Arial, Helvetica, sans-serif;
+   margin:25px 150px;
+}
+.contacto-texto{
+   font-size: 20px;
+}
+/*Aplicamos estilos a formulario*/
+.formulario {
+   color: aliceblue;
+   font-family:Arial, Helvetica, sans-serif;
+   margin: 20px;
+   border-radius: 8px;
+   background-color: rgb(239, 241, 248);
+   gap: 10px;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+}
+/**/
+.formulario-fila{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 10px;
+}
+/*campos del formulario*/
+.campo{
+   font-family: Arial, Helvetica, sans-serif;
+   display: flex;
+   flex-direction: column;  
+}
+.campo label{
+   color: rgb(0, 0, 0);
+   font-family:Arial, Helvetica, sans-serif;
+   font-weight: bolder;
+}
+.campo input,
+.campo select,
+.campo textarea {
+   padding: 10px;
+   border-radius: 6px;
+   border: 1px solid rgb(221, 225, 238);
+}
+.pie-pagina{
+   display: flex;
+   flex-direction:column;
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: rgb(23, 23, 56);
+   color: white;
+   font-size: 13px;
+   padding: 20px 110px;
+}
+.pie-grid{
+   display: flex;
+   flex-direction:row;
+   justify-content: space-between;
+   align-items: flex-start;
+   margin-bottom:30px;
+}
+.pie-grid ul{
+   display: flex;
+   flex-direction:column;
+   list-style: none;  
+}
+/* Quitamos el subrayado de los enlaces */
+.pie-grid a{
+   text-decoration: none;
+   color: white;
+}
+/* Línea antes del pie inferior */
+.pie-inferior{
+   border-top: 1px solid white;
+}
+
