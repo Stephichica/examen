@@ -320,10 +320,11 @@
    justify-content: space-between;
    align-items: center;
    color:rgb(3, 3, 3);
-   padding: 60px;
+   padding: 40px 20px;
+   max-width: 1200px;
    margin: 0px auto;
    background-color:rgb(239, 241, 248);
-   gap:50px;  
+   gap:20px;  
    font-family: Arial, Helvetica, sans-serif;
 }
 /*Aplicamos estilo a las etiquetas*/
@@ -373,9 +374,10 @@
 .contacto-grid{
    display: grid;
    grid-template-columns: repeat(2, 1fr);
-   gap: 10px;
+   gap:20px;
    align-items: start;
-   padding: 50px;
+   padding: 40px 20px;
+   max-width: 1200px;
    font-family: Arial, Helvetica, sans-serif;
    margin:25px 150px;
 }
@@ -386,11 +388,11 @@
 .formulario {
    color: aliceblue;
    font-family:Arial, Helvetica, sans-serif;
-   margin: 20px;
+   margin: 0;
    border-radius: 8px;
    background-color: rgb(239, 241, 248);
-   gap: 10px;
    padding: 20px;
+   gap:20px;
    display: flex;
    flex-direction: column;
 }
